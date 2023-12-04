@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91976163-e127-478d-9b6f-a6221fbc4d40" name="Changes" comment="" />
+    <list default="true" id="91976163-e127-478d-9b6f-a6221fbc4d40" name="Changes" comment="基础固定大小缓存&amp;淘汰策略类none、fifo" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -86,8 +86,16 @@
       <updated>1701672078718</updated>
       <workItem from="1701672079968" duration="10483000" />
       <workItem from="1701691810106" duration="7268000" />
-      <workItem from="1701699418399" duration="922000" />
+      <workItem from="1701699418399" duration="1299000" />
     </task>
+    <task id="LOCAL-00001" summary="基础固定大小缓存&amp;淘汰策略类none、fifo">
+      <created>1701700603438</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1701700603438</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,5 +123,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="基础固定大小缓存&amp;淘汰策略类none、fifo" />
+    <option name="LAST_COMMIT_MESSAGE" value="基础固定大小缓存&amp;淘汰策略类none、fifo" />
   </component>
 </project>
