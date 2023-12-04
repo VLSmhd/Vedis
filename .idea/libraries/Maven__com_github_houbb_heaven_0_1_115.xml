@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.github.houbb:heaven:0.1.115">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../Maven/apache-maven-3.6.1/mvn-resp/com/github/houbb/heaven/0.1.115/heaven-0.1.115.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../Maven/apache-maven-3.6.1/mvn-resp/com/github/houbb/heaven/0.1.115/heaven-0.1.115-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../Maven/apache-maven-3.6.1/mvn-resp/com/github/houbb/heaven/0.1.115/heaven-0.1.115-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

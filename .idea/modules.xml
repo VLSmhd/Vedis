@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Vedis.iml" filepath="$PROJECT_DIR$/.idea/Vedis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Vedis-api/Vedis-api.iml" filepath="$PROJECT_DIR$/Vedis-api/Vedis-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Vedis-core/Vedis-core.iml" filepath="$PROJECT_DIR$/Vedis-core/Vedis-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Vedis-test/Vedis-test.iml" filepath="$PROJECT_DIR$/Vedis-test/Vedis-test.iml" />
+    </modules>
+  </component>
+</project>

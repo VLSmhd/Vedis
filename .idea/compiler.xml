@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="Vedis" target="1.7" />
+      <module name="Vedis-api" target="1.7" />
+      <module name="Vedis-core" target="1.7" />
+      <module name="Vedis-test" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Vedis" options="" />
+      <module name="Vedis-api" options="-proc:none" />
+      <module name="Vedis-core" options="-proc:none" />
+      <module name="Vedis-test" options="-proc:none" />
+    </option>
+  </component>
+</project>
