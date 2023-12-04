@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91976163-e127-478d-9b6f-a6221fbc4d40" name="Changes" comment="基础固定大小缓存&amp;淘汰策略类none、fifo" />
+    <list default="true" id="91976163-e127-478d-9b6f-a6221fbc4d40" name="Changes" comment="基础固定大小缓存&amp;淘汰策略类none、fifo">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +22,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -86,7 +89,7 @@
       <updated>1701672078718</updated>
       <workItem from="1701672079968" duration="10483000" />
       <workItem from="1701691810106" duration="7268000" />
-      <workItem from="1701699418399" duration="1299000" />
+      <workItem from="1701699418399" duration="1979000" />
     </task>
     <task id="LOCAL-00001" summary="基础固定大小缓存&amp;淘汰策略类none、fifo">
       <created>1701700603438</created>
@@ -95,7 +98,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701700603438</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="基础固定大小缓存&amp;淘汰策略类none、fifo">
+      <created>1701700993198</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1701700993198</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
