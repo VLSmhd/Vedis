@@ -5,7 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91976163-e127-478d-9b6f-a6221fbc4d40" name="Changes" comment="基础固定大小缓存&amp;淘汰策略类none、fifo">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_20.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vedis-api/src/main/java/com/vls/cache/api/ICacheExpire.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/expire/CacheExpire.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/expire/CacheExpireSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vedis-api/src/main/java/com/vls/cache/api/ICache.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-api/src/main/java/com/vls/cache/api/ICache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vedis-api/target/classes/com/vls/cache/api/ICache.class" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-api/target/classes/com/vls/cache/api/ICache.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vedis-core/Vedis-core.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/Vedis-core.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vedis-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/Cache.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/Cache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/guide/CacheGuide.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/guide/CacheGuide.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/Cache.class" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/Cache.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/CacheContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/CacheContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/exception/CacheRuntimeException.class" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/exception/CacheRuntimeException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/guide/CacheGuide.class" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/guide/CacheGuide.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/support/evict/CacheEvictContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/support/evict/CacheEvictContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/support/evict/CacheEvictFIFO.class" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/support/evict/CacheEvictFIFO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/support/evict/CacheEvictNone.class" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/support/evict/CacheEvictNone.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/support/evict/CacheEvicts.class" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/support/evict/CacheEvicts.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vedis-test/Vedis-test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-test/Vedis-test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vedis-test/src/main/java/CacheBsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-test/src/main/java/CacheBsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vedis-test/target/classes/CacheBsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-test/target/classes/CacheBsTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,17 +76,28 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.CacheBsTest.expireTest">
+    <configuration name="CacheBsTest.expireTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Vedis-test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CacheBsTest" />
+      <option name="METHOD_NAME" value="expireTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CacheBsTest.helloTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Vedis-test" />
       <option name="PACKAGE_NAME" value="" />
@@ -72,6 +110,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CacheBsTest.expireTest" />
         <item itemvalue="JUnit.CacheBsTest.helloTest" />
       </list>
     </recent_temporary>
@@ -89,7 +128,9 @@
       <updated>1701672078718</updated>
       <workItem from="1701672079968" duration="10483000" />
       <workItem from="1701691810106" duration="7268000" />
-      <workItem from="1701699418399" duration="1979000" />
+      <workItem from="1701699418399" duration="2263000" />
+      <workItem from="1701736832915" duration="25000" />
+      <workItem from="1701751057627" duration="11616000" />
     </task>
     <task id="LOCAL-00001" summary="基础固定大小缓存&amp;淘汰策略类none、fifo">
       <created>1701700603438</created>
@@ -122,7 +163,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="origin/V1" />
                       </list>
                     </value>
                   </entry>
@@ -133,9 +174,26 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="基础固定大小缓存&amp;淘汰策略类none、fifo" />
     <option name="LAST_COMMIT_MESSAGE" value="基础固定大小缓存&amp;淘汰策略类none、fifo" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/expire/CacheExpire.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/expire/CacheExpire.java</url>
+          <line>68</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

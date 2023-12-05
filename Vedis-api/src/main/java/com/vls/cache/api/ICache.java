@@ -1,6 +1,7 @@
 package com.vls.cache.api;
 
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author VLS
@@ -10,5 +11,8 @@ import java.util.Map;
  */
 public interface ICache<K,V> extends Map<K,V> {
 
+    ICache<K,V> expire(K key, long timeout, TimeUnit unit);
 
+
+    ICache<K,V> expireAt(K key, long timeoutAt);
 }

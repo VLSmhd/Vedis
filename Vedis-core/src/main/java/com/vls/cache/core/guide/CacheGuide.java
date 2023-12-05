@@ -18,7 +18,7 @@ import java.util.Map;
  * @version 1.0
  */
 public final class CacheGuide<K,V> {
-    //缓存变量
+    //缓存变量, 真正创建map的地方
     private Map<K,V> map = new HashMap<>();
 
     private int sizeLimit = Integer.MAX_VALUE;

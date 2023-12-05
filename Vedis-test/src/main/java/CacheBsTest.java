@@ -3,6 +3,8 @@ import com.vls.cache.core.guide.CacheGuide;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * 缓存引导类测试
  * @author binbin.hou
@@ -26,6 +28,29 @@ public class CacheBsTest {
         cache.put("4", "4");
 
         Assert.assertEquals(2, cache.size());
+        System.out.println(cache.keySet());
+    }
+
+
+    /**
+     * 过期测试
+     * @since 0.0.3
+     */
+    @Test
+    public void expireTest() throws InterruptedException {
+        ICache<String, String> cache = CacheGuide.<String,String>newInstance()
+                .sizeLimit(3)
+                .build();
+
+        cache.put("1", "1");
+        cache.put("2", "2");
+
+        cache.expire("1", 50, TimeUnit.MILLISECONDS);
+        System.out.println(cache.keySet());
+        Assert.assertEquals(2, cache.size());
+
+        TimeUnit.MILLISECONDS.sleep(200);
+        Assert.assertEquals(1, cache.size());
         System.out.println(cache.keySet());
     }
 

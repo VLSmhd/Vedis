@@ -3,12 +3,16 @@ package com.vls.cache.core;
 import com.vls.cache.api.ICache;
 import com.vls.cache.api.ICacheContext;
 import com.vls.cache.api.ICacheEvict;
+import com.vls.cache.api.ICacheExpire;
 import com.vls.cache.core.exception.CacheRuntimeException;
 import com.vls.cache.core.support.evict.CacheEvictContext;
+import com.vls.cache.core.support.expire.CacheExpire;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @description: 缓存信息实现类
@@ -24,10 +28,13 @@ public class Cache<K,V> implements ICache<K,V> {
 
     private final ICacheEvict<K,V> cacheEvict;
 
+    private final ICacheExpire<K,V> cacheExpire;
+
     public Cache(ICacheContext<K,V> context) {
         this.map = context.map();
         this.sizeLimit = context.sizeLimit();
         cacheEvict = context.cahceEvict();
+        cacheExpire = new CacheExpire<>(this);
     }
 
     /**
@@ -49,18 +56,22 @@ public class Cache<K,V> implements ICache<K,V> {
 
     @Override
     public boolean containsKey(Object key) {
+        refreshExpireAllKeys();
         return map.containsKey(key);
     }
 
 
     @Override
     public boolean containsValue(Object value) {
+        refreshExpireAllKeys();
         return map.containsValue(value);
     }
 
 
     @Override
     public V get(Object key) {
+        K genericKey = (K) key;
+        this.cacheExpire.lazyRefresh( Collections.singletonList(genericKey));
         return map.get(key);
     }
 
@@ -107,18 +118,51 @@ public class Cache<K,V> implements ICache<K,V> {
 
     @Override
     public Set<K> keySet() {
+        refreshExpireAllKeys();
         return map.keySet();
     }
 
 
     @Override
     public Collection<V> values() {
+        refreshExpireAllKeys();
         return map.values();
     }
 
 
     @Override
     public Set<Entry<K, V>> entrySet() {
+        refreshExpireAllKeys();
         return map.entrySet();
+    }
+
+
+    /*
+     * 多少时间后过期
+     * @param
+     * @return
+     */
+    @Override
+    public ICache<K, V> expire(K key, long timeout, TimeUnit unit) {
+        long mills = unit.toMillis(timeout);
+
+        long timeoutAt = System.currentTimeMillis() + mills;
+        return this.expireAt(key, timeoutAt);
+    }
+
+    @Override
+    public ICache<K, V> expireAt(K key, long timeoutAt) {
+        this.cacheExpire.expire(key, timeoutAt);
+        return this;
+    }
+
+
+    /*
+     * 刷新懒过期处理所有的 keys
+     * @param
+     * @return
+     */
+    private void refreshExpireAllKeys() {
+        this.cacheExpire.lazyRefresh(map.keySet());
     }
 }
