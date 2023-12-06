@@ -4,9 +4,14 @@ package com.vls.cache.core.guide;
 import com.github.houbb.heaven.util.common.ArgUtil;
 import com.vls.cache.api.ICache;
 import com.vls.cache.api.ICacheEvict;
+import com.vls.cache.api.ICacheLoad;
+import com.vls.cache.api.ICachePersist;
 import com.vls.cache.core.Cache;
 import com.vls.cache.core.CacheContext;
 import com.vls.cache.core.support.evict.CacheEvictFIFO;
+import com.vls.cache.core.support.evict.CacheEvicts;
+import com.vls.cache.core.support.load.CacheLoads;
+import com.vls.cache.core.support.persist.CachePersists;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,7 +28,12 @@ public final class CacheGuide<K,V> {
 
     private int sizeLimit = Integer.MAX_VALUE;
 
-    private ICacheEvict<K,V> cacheEvict = new CacheEvictFIFO<>();
+
+    private ICacheEvict<K,V> cacheEvict = CacheEvicts.none();
+
+    private ICachePersist<K,V> persist = CachePersists.none();
+
+    private ICacheLoad<K,V> load = CacheLoads.none();
 
 
     private CacheGuide(){};
@@ -52,6 +62,16 @@ public final class CacheGuide<K,V> {
         this.sizeLimit = sizeLimit;
         return this;
     }
+    public CacheGuide<K,V> load(ICacheLoad<K,V> load){
+        ArgUtil.notNull(load, "load");
+        this.load = load;
+        return this;
+    }
+    public CacheGuide<K,V> persist(ICachePersist<K,V> persist){
+        ArgUtil.notNull(persist, "persist");
+        this.persist = persist;
+        return this;
+    }
 
 
     public ICache<K,V> build(){
@@ -60,6 +80,11 @@ public final class CacheGuide<K,V> {
         context.map(map);
         context.cacheEvict(cacheEvict);
         context.sizeLimit(sizeLimit);
-        return new Cache<>(context);
+        Cache<K, V> cache = new Cache<>(context);
+        cache.setLoad(load);
+        cache.setPersist(this.persist);
+
+        cache.init();
+        return cache;
     }
 }

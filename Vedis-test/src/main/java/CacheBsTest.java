@@ -1,5 +1,8 @@
 import com.vls.cache.api.ICache;
 import com.vls.cache.core.guide.CacheGuide;
+import com.vls.cache.core.support.load.CacheLoads;
+import com.vls.cache.core.support.load.MyCacheLoad;
+import com.vls.cache.core.support.persist.CachePersists;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -52,6 +55,17 @@ public class CacheBsTest {
         TimeUnit.MILLISECONDS.sleep(200);
         Assert.assertEquals(1, cache.size());
         System.out.println(cache.keySet());
+    }
+
+
+    @Test
+    public void rdbTest() throws InterruptedException {
+        ICache<String, String> cache = CacheGuide.<String, String>newInstance()
+                .load(CacheLoads.<String, String>fileJson("test1.rdb"))
+                .build();
+
+        Assert.assertEquals(2, cache.size());
+        TimeUnit.SECONDS.sleep(2000);
     }
 
 }

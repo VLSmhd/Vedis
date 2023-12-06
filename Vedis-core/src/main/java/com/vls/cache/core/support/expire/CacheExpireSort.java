@@ -21,6 +21,9 @@ public class CacheExpireSort<K,V> implements ICacheExpire<K,V> {
     //存储设置了过期时间的缓存信息
     private final Map<Long, List<K>> sortedExpireMap;
 
+    //便于获取key的过期时间
+    private final Map<K, Long> expireMap = new HashMap<>();
+
     private ICache<K,V> cache;
 
     //每次清除的个数限制
@@ -79,7 +82,7 @@ public class CacheExpireSort<K,V> implements ICacheExpire<K,V> {
                         K key = keysIterator.next();
                         log.debug("删除的缓存key为{}", key);
                         keysIterator.remove();
-                        sortedExpireMap.remove(key);
+                        expireMap.remove(key);
 
                         cache.remove(key);
                         count++;
@@ -102,10 +105,17 @@ public class CacheExpireSort<K,V> implements ICacheExpire<K,V> {
         }
         keys.add(key);
         sortedExpireMap.put(expireAt, keys);
+        expireMap.put(key, expireAt);
     }
 
     @Override
     public void lazyRefresh(Collection<K> keys) {
         return;
+    }
+
+
+    @Override
+    public Long expireTime(K key) {
+        return expireMap.get(key);
     }
 }

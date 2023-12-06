@@ -25,4 +25,12 @@ public interface ICacheExpire<K,V> {
      * @return
      */
     void lazyRefresh(Collection<K> keys);
+
+
+    /*
+     * 获得待过期的key的过期时间
+     * @param
+     * @return
+     */
+    Long expireTime(K key);
 }

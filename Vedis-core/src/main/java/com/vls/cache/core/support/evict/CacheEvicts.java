@@ -9,6 +9,7 @@ import com.vls.cache.api.ICacheEvict;
  * @version 1.0
  */
 public final class CacheEvicts {
+    //不让外界创建，只提供静态类
     private CacheEvicts(){}
 
 

@@ -11,7 +11,6 @@ import java.util.Map;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-import java.util.logging.Logger;
 
 /**
  * @description:  基础 过期删除实现类
@@ -105,5 +104,10 @@ public class CacheExpire<K,V> implements ICacheExpire<K,V> {
                 cleanExpireKey(key);
             }
         }
+    }
+
+    @Override
+    public Long expireTime(K key) {
+        return expireMap.get(key);
     }
 }

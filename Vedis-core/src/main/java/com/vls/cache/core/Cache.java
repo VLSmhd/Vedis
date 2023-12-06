@@ -1,12 +1,13 @@
 package com.vls.cache.core;
 
-import com.vls.cache.api.ICache;
-import com.vls.cache.api.ICacheContext;
-import com.vls.cache.api.ICacheEvict;
-import com.vls.cache.api.ICacheExpire;
+import com.vls.cache.api.*;
 import com.vls.cache.core.exception.CacheRuntimeException;
 import com.vls.cache.core.support.evict.CacheEvictContext;
 import com.vls.cache.core.support.expire.CacheExpire;
+import com.vls.cache.core.support.load.CacheLoads;
+import com.vls.cache.core.support.persist.CachePersistNone;
+import com.vls.cache.core.support.persist.CachePersists;
+import com.vls.cache.core.support.persist.InnerCachePersist;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -28,13 +29,32 @@ public class Cache<K,V> implements ICache<K,V> {
 
     private final ICacheEvict<K,V> cacheEvict;
 
-    private final ICacheExpire<K,V> cacheExpire;
+    private ICacheExpire<K,V> cacheExpire;
+
+    private ICacheLoad<K,V> load;
+
+    private ICachePersist<K,V> persist;
 
     public Cache(ICacheContext<K,V> context) {
         this.map = context.map();
         this.sizeLimit = context.sizeLimit();
-        cacheEvict = context.cahceEvict();
-        cacheExpire = new CacheExpire<>(this);
+        this.cacheEvict = context.cahceEvict();
+        this.load = CacheLoads.none();
+        this.persist = CachePersists.none();
+    }
+
+    public ICacheExpire<K, V> getCacheExpire() {
+        return cacheExpire;
+    }
+
+
+    public void init(){
+        this.cacheExpire = new CacheExpire<>(this);
+        this.load.load(this);
+
+        if(this.persist != null && !(this.persist instanceof CachePersistNone)){
+            new InnerCachePersist(this, persist);
+        }
     }
 
     /**
@@ -154,6 +174,35 @@ public class Cache<K,V> implements ICache<K,V> {
     public ICache<K, V> expireAt(K key, long timeoutAt) {
         this.cacheExpire.expire(key, timeoutAt);
         return this;
+    }
+
+    @Override
+    public ICacheExpire<K, V> expire() {
+        return this.cacheExpire;
+    }
+
+    @Override
+    public ICacheLoad<K, V> load() {
+        return this.load;
+    }
+
+    /*
+     * 设置加载策略
+     * @param
+     * @return
+     */
+    public void setLoad(ICacheLoad<K,V> cacheLoad) {
+        this.load = cacheLoad;
+    }
+
+
+    @Override
+    public ICachePersist<K, V> persist() {
+        return this.persist;
+    }
+
+    public void setPersist(ICachePersist<K,V> cachePersist){
+        this.persist = cachePersist;
     }
 
 
