@@ -4,46 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91976163-e127-478d-9b6f-a6221fbc4d40" name="Changes" comment="过期删除">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_62.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vedis-api/src/main/java/com/vls/cache/api/ICacheLoad.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vedis-api/src/main/java/com/vls/cache/api/ICachePersist.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/model/PersistRdbEntry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/expire/CacheExpires.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/load/CacheLoadFileJson.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/load/CacheLoadNone.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/load/CacheLoads.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/load/MyCacheLoad.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/persist/CachePersistFileJson.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/persist/CachePersistNone.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/persist/CachePersists.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/persist/InnerCachePersist.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/util/FileUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vedis-api/src/main/java/com/vls/cache/api/ICache.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-api/src/main/java/com/vls/cache/api/ICache.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vedis-api/src/main/java/com/vls/cache/api/ICacheExpire.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-api/src/main/java/com/vls/cache/api/ICacheExpire.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vedis-api/target/classes/com/vls/cache/api/ICache.class" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-api/target/classes/com/vls/cache/api/ICache.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vedis-api/target/classes/com/vls/cache/api/ICacheExpire.class" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-api/target/classes/com/vls/cache/api/ICacheExpire.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vedis-core/Vedis-core.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/Vedis-core.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vedis-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/Cache.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/Cache.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/guide/CacheGuide.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/guide/CacheGuide.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/evict/CacheEvicts.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/evict/CacheEvicts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/expire/CacheExpire.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/expire/CacheExpire.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/expire/CacheExpireSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/expire/CacheExpireSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/Cache.class" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/Cache.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/guide/CacheGuide.class" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/guide/CacheGuide.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/support/evict/CacheEvicts.class" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/support/evict/CacheEvicts.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/support/expire/CacheExpire$ExpireThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/support/expire/CacheExpire$ExpireThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/support/expire/CacheExpire.class" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/support/expire/CacheExpire.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/support/expire/CacheExpireSort$ExpireThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/support/expire/CacheExpireSort$ExpireThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/support/expire/CacheExpireSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/support/expire/CacheExpireSort.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vedis-test/Vedis-test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-test/Vedis-test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vedis-test/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-test/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vedis-test/src/main/java/CacheBsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-test/src/main/java/CacheBsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vedis-test/target/classes/CacheBsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-test/target/classes/CacheBsTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="91976163-e127-478d-9b6f-a6221fbc4d40" name="Changes" comment="RDB持久化" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -153,7 +114,7 @@
       <workItem from="1701736832915" duration="25000" />
       <workItem from="1701751057627" duration="17746000" />
       <workItem from="1701827977100" duration="4000" />
-      <workItem from="1701846768176" duration="7347000" />
+      <workItem from="1701846768176" duration="7535000" />
     </task>
     <task id="LOCAL-00001" summary="基础固定大小缓存&amp;淘汰策略类none、fifo">
       <created>1701700603438</created>
@@ -183,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701779317320</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="RDB持久化">
+      <created>1701855184139</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1701855184139</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,7 +184,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="过期删除" />
     <MESSAGE value="过期删除" />
-    <option name="LAST_COMMIT_MESSAGE" value="过期删除" />
+    <MESSAGE value="RDB持久化" />
+    <option name="LAST_COMMIT_MESSAGE" value="RDB持久化" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
