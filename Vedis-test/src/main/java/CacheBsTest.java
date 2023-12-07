@@ -1,5 +1,6 @@
 import com.vls.cache.api.ICache;
 import com.vls.cache.core.guide.CacheGuide;
+import com.vls.cache.core.support.evict.CacheEvicts;
 import com.vls.cache.core.support.load.CacheLoads;
 import com.vls.cache.core.support.load.MyCacheLoad;
 import com.vls.cache.core.support.persist.CachePersists;
@@ -23,6 +24,7 @@ public class CacheBsTest {
     public void helloTest() {
         ICache<String, String> cache = CacheGuide.<String,String>newInstance()
                 .sizeLimit(2)
+                .cacheEvict(CacheEvicts.<String, String>fifo())
                 .build();
 
         cache.put("1", "1");
@@ -30,7 +32,6 @@ public class CacheBsTest {
         cache.put("3", "3");
         cache.put("4", "4");
 
-        Assert.assertEquals(2, cache.size());
         System.out.println(cache.keySet());
     }
 

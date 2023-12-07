@@ -51,7 +51,7 @@ public class CacheContext<K,V> implements ICacheContext<K,V> {
      * @return
      */
     @Override
-    public ICacheEvict<K,V> cahceEvict() {
+    public ICacheEvict<K,V> cacheEvict() {
         return cacheEvict;
     }
 

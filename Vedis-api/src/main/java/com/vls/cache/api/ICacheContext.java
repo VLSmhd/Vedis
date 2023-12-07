@@ -29,6 +29,6 @@ public interface ICacheContext<K,V> {
      * @param
      * @return
      */
-    ICacheEvict<K,V> cahceEvict();
+    ICacheEvict<K,V> cacheEvict();
 
 }

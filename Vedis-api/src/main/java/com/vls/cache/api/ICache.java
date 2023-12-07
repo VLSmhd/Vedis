@@ -1,5 +1,6 @@
 package com.vls.cache.api;
 
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -26,4 +27,6 @@ public interface ICache<K,V> extends Map<K,V> {
     ICacheLoad<K,V> load();
 
     ICachePersist<K,V> persist();
+
+    List<ICacheRemoveListener<K,V>> removeListeners();
 }

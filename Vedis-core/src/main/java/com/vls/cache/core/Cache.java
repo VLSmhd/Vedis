@@ -1,18 +1,19 @@
 package com.vls.cache.core;
 
 import com.vls.cache.api.*;
+import com.vls.cache.constant.enums.CacheRemoveType;
 import com.vls.cache.core.exception.CacheRuntimeException;
 import com.vls.cache.core.support.evict.CacheEvictContext;
 import com.vls.cache.core.support.expire.CacheExpire;
+import com.vls.cache.core.support.listener.remove.CacheRemoveListenerContext;
+import com.vls.cache.core.support.listener.remove.CacheRemoveListeners;
 import com.vls.cache.core.support.load.CacheLoads;
 import com.vls.cache.core.support.persist.CachePersistNone;
 import com.vls.cache.core.support.persist.CachePersists;
 import com.vls.cache.core.support.persist.InnerCachePersist;
+import com.vls.cache.util.ObjectUtils;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -35,10 +36,12 @@ public class Cache<K,V> implements ICache<K,V> {
 
     private ICachePersist<K,V> persist;
 
+    private List<ICacheRemoveListener<K,V>> removeListeners;
+
     public Cache(ICacheContext<K,V> context) {
         this.map = context.map();
         this.sizeLimit = context.sizeLimit();
-        this.cacheEvict = context.cahceEvict();
+        this.cacheEvict = context.cacheEvict();
         this.load = CacheLoads.none();
         this.persist = CachePersists.none();
     }
@@ -101,7 +104,19 @@ public class Cache<K,V> implements ICache<K,V> {
         CacheEvictContext<K, V> context = new CacheEvictContext<>();
         context.key(key).sizeLimit(sizeLimit).cache(this);
 
-        cacheEvict.evict(context);
+        //添加拦截器
+        ICacheEntry<K, V> evictEntry = cacheEvict.evict(context);
+        if(ObjectUtils.isNotEmpty(evictEntry)){
+            CacheRemoveListenerContext<K, V> cacheRemoveListenerContext = CacheRemoveListenerContext.<K, V>newInstance()
+                    .setKey(evictEntry.key())
+                    .setValue(evictEntry.value())
+                    .setType(CacheRemoveType.EVICT.getCode());
+
+            for (ICacheRemoveListener<K, V> removeListener : this.removeListeners) {
+                removeListener.listen(cacheRemoveListenerContext);
+            }
+
+        }
 
         //2. 淘汰后判断能否添加
         if(isSizeLimited()){
@@ -204,6 +219,17 @@ public class Cache<K,V> implements ICache<K,V> {
     public void setPersist(ICachePersist<K,V> cachePersist){
         this.persist = cachePersist;
     }
+
+    @Override
+    public List<ICacheRemoveListener<K, V>> removeListeners() {
+        return this.removeListeners;
+    }
+
+    public ICache<K,V> removeListeners(List<ICacheRemoveListener<K, V>> removeListeners){
+        this.removeListeners = removeListeners;
+        return this;
+    }
+
 
 
     /*

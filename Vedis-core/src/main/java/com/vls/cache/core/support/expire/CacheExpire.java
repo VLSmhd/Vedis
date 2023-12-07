@@ -3,10 +3,14 @@ package com.vls.cache.core.support.expire;
 import com.github.houbb.heaven.util.util.CollectionUtil;
 import com.vls.cache.api.ICache;
 import com.vls.cache.api.ICacheExpire;
+import com.vls.cache.api.ICacheRemoveListener;
+import com.vls.cache.constant.enums.CacheRemoveType;
+import com.vls.cache.core.support.listener.remove.CacheRemoveListenerContext;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -80,7 +84,18 @@ public class CacheExpire<K,V> implements ICacheExpire<K,V> {
         if(currentTimeMillis >= expireAtMs){
             log.debug("删除的缓存key为{}", key);
             expireMap.remove(key);
-            cache.remove(key);
+            V removeValue = cache.remove(key);
+
+            //过期监听器
+            CacheRemoveListenerContext<K, V> cacheRemoveListenerContext = CacheRemoveListenerContext.<K, V>newInstance()
+                    .setKey(key)
+                    .setValue(removeValue)
+                    .setType(CacheRemoveType.EXPIRE.getCode());
+
+            for (ICacheRemoveListener<K, V> removeListener : cache.removeListeners()) {
+                removeListener.listen(cacheRemoveListenerContext);
+            }
+
         }
     }
 
