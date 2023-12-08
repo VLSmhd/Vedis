@@ -1,9 +1,9 @@
 import com.vls.cache.api.ICache;
 import com.vls.cache.core.guide.CacheGuide;
 import com.vls.cache.core.support.evict.CacheEvicts;
+import com.vls.cache.core.support.listener.slow.CacheSlowListener;
+import com.vls.cache.core.support.listener.slow.CacheSlowListeners;
 import com.vls.cache.core.support.load.CacheLoads;
-import com.vls.cache.core.support.load.MyCacheLoad;
-import com.vls.cache.core.support.persist.CachePersists;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -67,6 +67,16 @@ public class CacheBsTest {
 
         Assert.assertEquals(2, cache.size());
         TimeUnit.SECONDS.sleep(2000);
+    }
+
+    @Test
+    public void slowLogTest() {
+        ICache<String, String> cache = CacheGuide.<String,String>newInstance()
+                .addSlowListener(CacheSlowListeners.defaults())
+                .build();
+
+        cache.put("1", "2");
+        cache.get("1");
     }
 
 }

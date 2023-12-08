@@ -1,13 +1,13 @@
 package com.vls.cache.core.guide;
 
-
 import com.github.houbb.heaven.util.common.ArgUtil;
 import com.vls.cache.api.*;
 import com.vls.cache.core.Cache;
 import com.vls.cache.core.CacheContext;
-import com.vls.cache.core.support.evict.CacheEvictFIFO;
+import com.vls.cache.core.proxy.CacheProxys;
 import com.vls.cache.core.support.evict.CacheEvicts;
 import com.vls.cache.core.support.listener.remove.CacheRemoveListeners;
+import com.vls.cache.core.support.listener.slow.CacheSlowListeners;
 import com.vls.cache.core.support.load.CacheLoads;
 import com.vls.cache.core.support.persist.CachePersists;
 
@@ -34,6 +34,8 @@ public final class CacheGuide<K,V> {
     private ICacheLoad<K,V> load = CacheLoads.none();
 
     private List<ICacheRemoveListener<K,V>> removeListeners = CacheRemoveListeners.defaults();
+
+    private List<ICacheSlowListener> slowListeners = CacheSlowListeners.none();
 
 
     private CacheGuide(){};
@@ -77,20 +79,23 @@ public final class CacheGuide<K,V> {
         this.persist = persist;
         return this;
     }
+    public CacheGuide<K,V> addSlowListener(ICacheSlowListener slowListener){
+        ArgUtil.notNull(slowListener, "slowListener");
+        this.slowListeners.add(slowListener);
+        return this;
+    }
 
 
     public ICache<K,V> build(){
-        //创建缓存上下文
-        CacheContext<K, V> context = new CacheContext<>();
-        context.map(map);
-        context.cacheEvict(cacheEvict);
-        context.sizeLimit(sizeLimit);
-        Cache<K, V> cache = new Cache<>(context);
+        Cache<K,V> cache = new Cache<>();
+        cache.setMap(map);
+        cache.setCacheEvict(cacheEvict);
+        cache.setSizeLimit(sizeLimit);
         cache.setLoad(load);
-        cache.setPersist(this.persist);
+        cache.setPersist(persist);
         cache.removeListeners(removeListeners);
-
+        cache.slowListeners(slowListeners);
         cache.init();
-        return cache;
+        return CacheProxys.getProxy(cache);
     }
 }

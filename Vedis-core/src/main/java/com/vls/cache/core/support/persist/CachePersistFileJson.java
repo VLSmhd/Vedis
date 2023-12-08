@@ -6,14 +6,10 @@ import com.vls.cache.api.ICache;
 import com.vls.cache.api.ICachePersist;
 import com.vls.cache.core.model.PersistRdbEntry;
 import com.vls.cache.util.FileUtils;
-
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.nio.file.OpenOption;
 import java.nio.file.StandardOpenOption;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @description: JSON形式 RDB持久化
@@ -50,6 +46,22 @@ public class CachePersistFileJson<K,V> implements ICachePersist<K,V> {
         }
 
 
+    }
+
+
+    @Override
+    public long delay() {
+        return 5;
+    }
+
+    @Override
+    public long period() {
+        return 5;
+    }
+
+    @Override
+    public TimeUnit timeUnit() {
+        return TimeUnit.MINUTES;
     }
 
 

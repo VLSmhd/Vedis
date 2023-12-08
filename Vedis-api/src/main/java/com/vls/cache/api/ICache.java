@@ -29,4 +29,11 @@ public interface ICache<K,V> extends Map<K,V> {
     ICachePersist<K,V> persist();
 
     List<ICacheRemoveListener<K,V>> removeListeners();
+
+    /*
+     * 慢操作日志监听
+     * @param
+     * @return
+     */
+    List<ICacheSlowListener> slowListeners();
 }

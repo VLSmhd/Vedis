@@ -16,6 +16,10 @@ public class CacheSlowListenerContext implements ICacheSlowListenerContext {
 
     private long costTimeMills;
 
+    public static CacheSlowListenerContext newInstance(){
+        return new CacheSlowListenerContext();
+    }
+
 
     @Override
     public String methodName() {

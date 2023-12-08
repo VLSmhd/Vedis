@@ -18,6 +18,6 @@ public class CacheSlowListener implements ICacheSlowListener {
     @Override
     public long slowerThanMills() {
         //超过1s就打印
-        return 1000;
+        return 1;
     }
 }
