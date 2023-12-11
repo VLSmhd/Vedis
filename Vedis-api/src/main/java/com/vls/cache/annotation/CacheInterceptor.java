@@ -17,4 +17,6 @@ public @interface CacheInterceptor {
 
 
     boolean common() default true;
+
+    boolean evict() default false;
 }

@@ -36,6 +36,8 @@ public class CacheProxyGuide {
 
     private final List<ICacheInterceptor> costInterceptors = CacheInterceptors.defaultCosts();
 
+    private final ICacheInterceptor evictInterceptor = CacheInterceptors.evict();
+
 
     /*
      * 启动代理增强   这里其实就是拦截器增强的流程  before  方法  after
@@ -87,6 +89,14 @@ public class CacheProxyGuide {
                 }
             }
 
+            if(interceptor.evict()){
+                if(before){
+                    evictInterceptor.before(interceptorContext);
+                }else{
+                    evictInterceptor.after(interceptorContext);
+                }
+            }
+
 
             //aof追加
             ICachePersist persist = cache.persist();
@@ -97,6 +107,9 @@ public class CacheProxyGuide {
                     persistInterceptors.after(interceptorContext);
                 }
             }
+
+
+
         }
 
     }

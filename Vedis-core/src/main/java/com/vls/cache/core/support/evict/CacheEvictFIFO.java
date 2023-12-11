@@ -15,7 +15,7 @@ import java.util.Queue;
  * @date 2023/12/4 20:57
  * @version 1.0
  */
-public class CacheEvictFIFO<K,V> implements ICacheEvict<K,V> {
+public class CacheEvictFIFO<K,V> extends AbstractCacheEvict<K,V> {
 
     private Queue<K> queue;
 
@@ -24,7 +24,7 @@ public class CacheEvictFIFO<K,V> implements ICacheEvict<K,V> {
     }
 
     @Override
-    public ICacheEntry<K,V> evict(ICacheEvictContext<K, V> context) {
+    protected ICacheEntry<K, V> doEvict(ICacheEvictContext<K, V> context) {
         ICache<K, V> cache = context.cache();
         ICacheEntry<K,V> result = null;
         if(cache.size() >= context.sizeLimit()){
@@ -37,4 +37,5 @@ public class CacheEvictFIFO<K,V> implements ICacheEvict<K,V> {
         queue.add(key);
         return result;
     }
+
 }

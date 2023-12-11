@@ -4,6 +4,7 @@ import com.vls.cache.core.support.evict.CacheEvicts;
 import com.vls.cache.core.support.listener.slow.CacheSlowListener;
 import com.vls.cache.core.support.listener.slow.CacheSlowListeners;
 import com.vls.cache.core.support.load.CacheLoads;
+import com.vls.cache.core.support.persist.CachePersists;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -77,6 +78,52 @@ public class CacheBsTest {
 
         cache.put("1", "2");
         cache.get("1");
+    }
+
+    @Test
+    public void aofTest() throws InterruptedException {
+        ICache<String, String> cache = CacheGuide.<String,String>newInstance()
+                .persist(CachePersists.<String, String>aof("1.aof"))
+                .build();
+        cache.put("1", "1");
+        cache.expireAt("1", 10);
+        cache.remove("2");
+        TimeUnit.SECONDS.sleep(100);
+    }
+
+    @Test
+    public void aofLoadTest() {
+        ICache<String, String> cache = CacheGuide.<String,String>newInstance()
+                .load(CacheLoads.<String, String>aof("1.aof"))
+                .build();
+
+        Assert.assertEquals(1, cache.size());
+        System.out.println(cache.keySet());
+    }
+
+
+
+    @Test
+    public void lruTest() {
+        ICache<String, String> cache = CacheGuide.<String,String>newInstance()
+                .sizeLimit(3)
+                .evict(CacheEvicts.<String, String>lru())
+                .build();
+        cache.put("A", "hello");
+        cache.put("B", "world");
+        cache.put("C", "FIFO");
+
+// 访问一次A
+        cache.get("A");
+        System.out.println(cache.keySet());
+        cache.remove("B");
+        cache.put("D", "LRU");
+        cache.put("E", "wqe");
+        cache.put("F", "asd");
+
+        Assert.assertEquals(3, cache.size());
+
+        System.out.println(cache.keySet());
     }
 
 }

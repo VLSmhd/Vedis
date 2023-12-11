@@ -17,6 +17,8 @@ public interface ICache<K,V> extends Map<K,V> {
 
     ICache<K,V> expireAt(K key, long timeoutAt);
 
+    ICacheEvict<K,V> evict();
+
     /*
      * 获取缓存对应过期处理的策略类
      * @param

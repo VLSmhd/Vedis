@@ -5,47 +5,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91976163-e127-478d-9b6f-a6221fbc4d40" name="Changes" comment="删除监听器 &amp; 慢操作监听器定义">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__cglib_cglib_3_3_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_7_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vedis-api/src/main/java/com/vls/cache/annotation/CacheInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vedis-api/src/main/java/com/vls/cache/api/ICacheInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vedis-api/src/main/java/com/vls/cache/api/ICacheInterceptorContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/model/PersistAofEntry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/proxy/CacheProxys.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/proxy/ICacheProxy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/proxy/cglib/CglibProxy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/proxy/guide/CacheProxyGuide.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/proxy/guide/CacheProxyGuideContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/proxy/guide/ICacheProxyGuideContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/proxy/jdkdynamic/DynamicProxy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/proxy/none/NoneProxy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/intercepter/CacheInterceptorContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/intercepter/CacheInterceptors.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/intercepter/aof/CacheInterceptorAof.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/intercepter/cost/CacheInterceptorCost.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/persist/CachePersistAof.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/evict/AbstractCacheEvict.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/evict/CacheEvictLRU.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/evict/CacheEvictLRUDoubleListMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/evict/CacheEvictLruLinkedHashMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/intercepter/evict/CacheInterceptorEvict.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/load/CacheLoadAof.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/struct/lru/ILruMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/struct/lru/impl/LruMapDoubleList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/struct/lru/model/DoubleListNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/util/ReflectMethodUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vedis-api/src/main/java/com/vls/cache/annotation/CacheInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-api/src/main/java/com/vls/cache/annotation/CacheInterceptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Vedis-api/src/main/java/com/vls/cache/api/ICache.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-api/src/main/java/com/vls/cache/api/ICache.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vedis-api/src/main/java/com/vls/cache/api/ICachePersist.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-api/src/main/java/com/vls/cache/api/ICachePersist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vedis-api/src/main/java/com/vls/cache/api/ICacheEvict.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-api/src/main/java/com/vls/cache/api/ICacheEvict.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vedis-api/target/classes/com/vls/cache/annotation/CacheInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-api/target/classes/com/vls/cache/annotation/CacheInterceptor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Vedis-api/target/classes/com/vls/cache/api/ICache.class" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-api/target/classes/com/vls/cache/api/ICache.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vedis-api/target/classes/com/vls/cache/api/ICachePersist.class" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-api/target/classes/com/vls/cache/api/ICachePersist.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vedis-core/Vedis-core.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/Vedis-core.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vedis-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vedis-api/target/classes/com/vls/cache/api/ICacheEvict.class" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-api/target/classes/com/vls/cache/api/ICacheEvict.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/Cache.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/Cache.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/exception/CacheRuntimeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/exception/CacheRuntimeException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/guide/CacheGuide.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/guide/CacheGuide.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/listener/slow/CacheSlowListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/listener/slow/CacheSlowListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/listener/slow/CacheSlowListenerContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/listener/slow/CacheSlowListenerContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/persist/CachePersistFileJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/persist/CachePersistFileJson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/persist/CachePersistNone.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/persist/CachePersistNone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/util/FileUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/util/FileUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/model/PersistAofEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/model/PersistAofEntry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/proxy/guide/CacheProxyGuide.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/proxy/guide/CacheProxyGuide.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/evict/CacheEvictFIFO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/evict/CacheEvictFIFO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/evict/CacheEvictNone.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/evict/CacheEvictNone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/evict/CacheEvicts.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/evict/CacheEvicts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/intercepter/CacheInterceptors.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/intercepter/CacheInterceptors.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/load/CacheLoads.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/load/CacheLoads.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/persist/CachePersists.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/persist/CachePersists.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/Cache.class" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/Cache.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/exception/CacheRuntimeException.class" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/exception/CacheRuntimeException.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/guide/CacheGuide.class" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/guide/CacheGuide.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/support/persist/CachePersistFileJson.class" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/support/persist/CachePersistFileJson.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/support/persist/CachePersistNone.class" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/support/persist/CachePersistNone.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/util/FileUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/util/FileUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vedis-test/Vedis-test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-test/Vedis-test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/model/PersistAofEntry.class" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/model/PersistAofEntry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/proxy/guide/CacheProxyGuide.class" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/proxy/guide/CacheProxyGuide.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/support/evict/CacheEvictFIFO.class" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/support/evict/CacheEvictFIFO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/support/evict/CacheEvictNone.class" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/support/evict/CacheEvictNone.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/support/evict/CacheEvicts.class" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/support/evict/CacheEvicts.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/support/intercepter/CacheInterceptors.class" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/support/intercepter/CacheInterceptors.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/support/load/CacheLoads.class" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/support/load/CacheLoads.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/support/persist/CachePersists.class" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/target/classes/com/vls/cache/core/support/persist/CachePersists.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Vedis-test/src/main/java/CacheBsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-test/src/main/java/CacheBsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Vedis-test/target/classes/CacheBsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-test/target/classes/CacheBsTest.class" afterDir="false" />
     </list>
@@ -108,12 +104,22 @@
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected="JUnit.CacheBsTest.slowLogTest">
-    <configuration name="CacheBsTest.expireTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.CacheBsTest.lruTest">
+    <configuration name="CacheBsTest.aofLoadTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Vedis-test" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="CacheBsTest" />
-      <option name="METHOD_NAME" value="expireTest" />
+      <option name="METHOD_NAME" value="aofLoadTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CacheBsTest.aofTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Vedis-test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CacheBsTest" />
+      <option name="METHOD_NAME" value="aofTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -129,11 +135,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CacheBsTest.rdbTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CacheBsTest.lruTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Vedis-test" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="CacheBsTest" />
-      <option name="METHOD_NAME" value="rdbTest" />
+      <option name="METHOD_NAME" value="lruTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -151,10 +157,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CacheBsTest.lruTest" />
+        <item itemvalue="JUnit.CacheBsTest.aofLoadTest" />
+        <item itemvalue="JUnit.CacheBsTest.aofTest" />
         <item itemvalue="JUnit.CacheBsTest.slowLogTest" />
         <item itemvalue="JUnit.CacheBsTest.helloTest" />
-        <item itemvalue="JUnit.CacheBsTest.rdbTest" />
-        <item itemvalue="JUnit.CacheBsTest.expireTest" />
       </list>
     </recent_temporary>
   </component>
@@ -178,7 +185,11 @@
       <workItem from="1701846768176" duration="7535000" />
       <workItem from="1701930802059" duration="12915000" />
       <workItem from="1701995959920" duration="18000" />
-      <workItem from="1702018591183" duration="14761000" />
+      <workItem from="1702018591183" duration="15350000" />
+      <workItem from="1702103274339" duration="6977000" />
+      <workItem from="1702167398396" duration="17000" />
+      <workItem from="1702178809080" duration="14841000" />
+      <workItem from="1702257598575" duration="5000" />
     </task>
     <task id="LOCAL-00001" summary="基础固定大小缓存&amp;淘汰策略类none、fifo">
       <created>1701700603438</created>
@@ -222,7 +233,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701936865882</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="删除监听器 &amp; 慢操作监听器定义">
+      <created>1702044162196</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1702044162196</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,8 +274,8 @@
     <MESSAGE value="过期删除" />
     <MESSAGE value="过期删除" />
     <MESSAGE value="RDB持久化" />
-    <MESSAGE value="删除监听器 &amp; 慢操作监听器定义" />
-    <option name="LAST_COMMIT_MESSAGE" value="删除监听器 &amp; 慢操作监听器定义" />
+    <MESSAGE value="代理实现 &amp; 慢日志监控使用" />
+    <option name="LAST_COMMIT_MESSAGE" value="代理实现 &amp; 慢日志监控使用" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -278,14 +296,24 @@
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/load/CacheLoadFileJson.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/util/FileUtils.java</url>
           <line>73</line>
           <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/persist/CachePersistAof.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/Cache.java</url>
+          <line>117</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Vedis-test/src/main/java/CacheBsTest.java</url>
+          <line>118</line>
+          <option name="timeStamp" value="37" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

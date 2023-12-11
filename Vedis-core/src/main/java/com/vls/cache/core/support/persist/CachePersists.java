@@ -14,4 +14,7 @@ public class CachePersists {
     public static <K,V> ICachePersist<K,V> none(){
         return new CachePersistNone<>();
     }
+
+
+    public static <K,V> ICachePersist<K,V> aof(String filename){return new CachePersistAof<>(filename); }
 }

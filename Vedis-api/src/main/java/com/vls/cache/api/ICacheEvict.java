@@ -14,4 +14,19 @@ public interface ICacheEvict<K,V> {
      * @return
      */
     ICacheEntry<K,V> evict(ICacheEvictContext<K,V> context);
+
+    /*
+     * 服务于lru，将key添加到链表头
+     * @param
+     * @return
+     */
+    void updateKey(K key);
+
+    /*
+     * 服务于lru，将key移除
+     * @param
+     * @return
+     */
+    void removeKey(K key);
+
 }

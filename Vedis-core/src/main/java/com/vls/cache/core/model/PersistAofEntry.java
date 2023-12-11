@@ -14,6 +14,10 @@ public class PersistAofEntry {
 
     private Object[] params;
 
+    private PersistAofEntry(){
+
+    }
+
 
     private PersistAofEntry(String methodName, Object[] params) {
         this.methodName = methodName;

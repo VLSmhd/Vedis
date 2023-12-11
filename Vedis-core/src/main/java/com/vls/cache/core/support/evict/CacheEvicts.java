@@ -30,4 +30,11 @@ public final class CacheEvicts {
     public static <K,V> ICacheEvict<K,V> fifo(){
         return new CacheEvictFIFO<>();
     }
+
+
+    public static <K,V> ICacheEvict<K,V> lru(){return new CacheEvictLRU<>(); }
+
+    public static <K,V> ICacheEvict<K,V> lruDoubleListMap(){return new CacheEvictLRUDoubleListMap<>(); }
+
+
 }

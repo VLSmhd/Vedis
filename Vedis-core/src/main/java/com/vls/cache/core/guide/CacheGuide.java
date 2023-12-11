@@ -84,6 +84,12 @@ public final class CacheGuide<K,V> {
         this.slowListeners.add(slowListener);
         return this;
     }
+    public CacheGuide<K,V> evict(ICacheEvict<K,V> evict){
+        ArgUtil.notNull(evict, "evict");
+        this.cacheEvict = evict;
+        return this;
+    }
+
 
 
     public ICache<K,V> build(){

@@ -41,9 +41,6 @@ public class Cache<K,V> implements ICache<K,V> {
 
     private List<ICacheSlowListener> slowListeners;
 
-
-
-
     public ICacheExpire<K, V> getCacheExpire() {
         return cacheExpire;
     }
@@ -88,6 +85,7 @@ public class Cache<K,V> implements ICache<K,V> {
 
 
     @Override
+    @CacheInterceptor(aof = true, evict = true)
     public boolean containsKey(Object key) {
         refreshExpireAllKeys();
         return map.containsKey(key);
@@ -102,6 +100,7 @@ public class Cache<K,V> implements ICache<K,V> {
 
 
     @Override
+    @CacheInterceptor(aof = true, evict = true)
     public V get(Object key) {
         K genericKey = (K) key;
         this.cacheExpire.lazyRefresh( Collections.singletonList(genericKey));
@@ -109,7 +108,7 @@ public class Cache<K,V> implements ICache<K,V> {
     }
 
     @Override
-    @CacheInterceptor(aof = true)
+    @CacheInterceptor(aof = true, evict = true)
     public V put(K key, V value) {
         //1. 尝试淘汰内存,初始化一个CacheEvictContext 服务于策略
         CacheEvictContext<K, V> context = new CacheEvictContext<>();
@@ -145,7 +144,7 @@ public class Cache<K,V> implements ICache<K,V> {
 
 
     @Override
-    @CacheInterceptor(aof = true)
+    @CacheInterceptor(aof = true, evict = true)
     public V remove(Object key) {
         return map.remove(key);
     }
@@ -204,6 +203,11 @@ public class Cache<K,V> implements ICache<K,V> {
     public ICache<K, V> expireAt(K key, long timeoutAt) {
         this.cacheExpire.expire(key, timeoutAt);
         return this;
+    }
+
+    @Override
+    public ICacheEvict<K, V> evict() {
+        return this.cacheEvict;
     }
 
     @Override

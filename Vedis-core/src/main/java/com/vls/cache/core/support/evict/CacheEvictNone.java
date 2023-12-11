@@ -10,9 +10,10 @@ import com.vls.cache.api.ICacheEvictContext;
  * @date 2023/12/4 20:47
  * @version 1.0
  */
-public class CacheEvictNone<K,V> implements ICacheEvict<K,V> {
+public class CacheEvictNone<K,V> extends AbstractCacheEvict<K,V> {
+
     @Override
-    public ICacheEntry<K,V> evict(ICacheEvictContext<K,V> context) {
+    protected ICacheEntry<K, V> doEvict(ICacheEvictContext<K, V> context) {
         return null;
     }
 }
