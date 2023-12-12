@@ -126,4 +126,63 @@ public class CacheBsTest {
         System.out.println(cache.keySet());
     }
 
+    @Test
+    public void lru2QTest() {
+        ICache<String, String> cache = CacheGuide.<String,String>newInstance()
+                .sizeLimit(3)
+                .evict(CacheEvicts.<String, String>lru2Q())
+                .build();
+
+        cache.put("A", "hello");
+        cache.put("B", "world");
+        cache.put("C", "FIFO");
+
+        // 访问一次A
+        cache.get("A");
+        cache.put("D", "LRU");
+        cache.put("E", "LRU");
+
+        Assert.assertEquals(3, cache.size());
+        System.out.println(cache.keySet());
+    }
+    @Test
+    public void lru2Test() {
+        ICache<String, String> cache = CacheGuide.<String,String>newInstance()
+                .sizeLimit(3)
+                .evict(CacheEvicts.<String, String>lru2())
+                .build();
+        cache.put("A", "hello");
+        cache.put("B", "world");
+        cache.put("C", "FIFO");
+        // 访问一次A
+        cache.get("A");
+        cache.put("D", "LRU");
+        Assert.assertEquals(3, cache.size());
+        System.out.println(cache.keySet());
+    }
+    @Test
+    public void lfuTest() {
+        ICache<String, String> cache = CacheGuide.<String,String>newInstance()
+                .sizeLimit(3)
+                .evict(CacheEvicts.<String, String>lfu())
+                .build();
+        cache.put("A", "hello");
+        cache.get("A");
+        cache.get("A");
+        cache.put("B", "world");
+        cache.get("B");
+        cache.put("C", "bug");
+        cache.put("D", "bug");
+
+//        cache.put("C", "FIFO");
+//// 访问一次A
+//        cache.get("A");
+//        cache.put("D", "LRU");
+//        cache.put("E", "LRU");
+//        cache.put("F", "LRU");
+
+        Assert.assertEquals(3, cache.size());
+        System.out.println(cache.keySet());
+    }
+
 }

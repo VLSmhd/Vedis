@@ -17,7 +17,6 @@ public class CacheEvictLRU<K,V> extends AbstractCacheEvict<K,V>{
     @Override
     protected ICacheEntry<K, V> doEvict(ICacheEvictContext<K, V> context) {
         ICache<K, V> cache = context.cache();
-        K key = context.key();
         int sizeLimit = context.sizeLimit();
         ICacheEntry<K, V> removeEntry = null;
 

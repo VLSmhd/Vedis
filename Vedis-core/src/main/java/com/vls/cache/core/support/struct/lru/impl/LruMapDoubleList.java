@@ -21,6 +21,18 @@ public class LruMapDoubleList<K,V> implements ILruMap<K,V> {
 
     private Map<K, DoubleListNode<K,V>> map;
 
+//    public DoubleListNode<K, V> head() {
+//        return head;
+//    }
+//
+//    public DoubleListNode<K, V> tail() {
+//        return tail;
+//    }
+//
+//    public Map<K, DoubleListNode<K, V>> map() {
+//        return map;
+//    }
+
     public LruMapDoubleList() {
         this.head = new DoubleListNode<>();
         this.tail = new DoubleListNode<>();
