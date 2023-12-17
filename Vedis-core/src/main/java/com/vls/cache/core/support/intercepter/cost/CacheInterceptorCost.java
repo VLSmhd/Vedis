@@ -8,6 +8,7 @@ import com.vls.cache.core.support.listener.slow.CacheSlowListenerContext;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
+import java.util.concurrent.LinkedBlockingDeque;
 
 @Slf4j
 public class CacheInterceptorCost<K,V> implements ICacheInterceptor<K,V> {
@@ -15,6 +16,7 @@ public class CacheInterceptorCost<K,V> implements ICacheInterceptor<K,V> {
     @Override
     public void before(ICacheInterceptorContext<K, V> context) {
         log.debug("Cost start, method: {}", context.method().getName());
+
     }
 
     @Override

@@ -41,9 +41,7 @@ public class Cache<K,V> implements ICache<K,V> {
 
     private List<ICacheSlowListener> slowListeners;
 
-    public ICacheExpire<K, V> getCacheExpire() {
-        return cacheExpire;
-    }
+
 
 
     public void init(){
@@ -67,6 +65,10 @@ public class Cache<K,V> implements ICache<K,V> {
         this.cacheEvict = cacheEvict;
     }
 
+    public void setCacheExpire(ICacheExpire<K, V> cacheExpire) {
+        this.cacheExpire = cacheExpire;
+    }
+
     /**
      * @description: 当前缓存中存储元素的个数
      * @author VLS
@@ -82,6 +84,7 @@ public class Cache<K,V> implements ICache<K,V> {
     public boolean isEmpty() {
         return map.isEmpty();
     }
+
 
 
     @Override

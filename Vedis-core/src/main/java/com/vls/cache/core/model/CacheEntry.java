@@ -21,9 +21,15 @@ public class CacheEntry<K,V> implements ICacheEntry<K,V> {
     public K key() {
         return key;
     }
+    public K key(K key) {
+        return key;
+    }
 
     @Override
     public V value() {
+        return value;
+    }
+    public V value(V value) {
         return value;
     }
 
