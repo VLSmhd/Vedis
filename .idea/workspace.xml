@@ -4,19 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91976163-e127-478d-9b6f-a6221fbc4d40" name="Changes" comment="LRU2 &amp; LRU2Q &amp; LFU">
-      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/evict/CacheEvictClock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/map/MyHashMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/struct/lru/impl/LruMapCircleList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/struct/lru/model/CircleListNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_12_6_18_10_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_12_6_18_10__Changes_.xml" beforeDir="false" />
+    <list default="true" id="91976163-e127-478d-9b6f-a6221fbc4d40" name="Changes" comment=" 时钟clock驱逐算法 &amp;&amp; 定期随机淘汰策略">
+      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/map/ProgressiveRehashMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/util/HashUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/Cache.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/Cache.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/model/CacheEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/model/CacheEntry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/expire/CacheExpire.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/expire/CacheExpire.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/expire/CacheExpires.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/expire/CacheExpireRandom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/intercepter/cost/CacheInterceptorCost.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vedis-core/src/main/java/com/vls/cache/core/support/intercepter/cost/CacheInterceptorCost.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +165,9 @@
       <workItem from="1702686025196" duration="8000" />
       <workItem from="1702712138779" duration="10415000" />
       <workItem from="1702774098804" duration="254000" />
-      <workItem from="1702777511553" duration="1915000" />
+      <workItem from="1702777511553" duration="9968000" />
+      <workItem from="1702861743780" duration="12000" />
+      <workItem from="1702866937304" duration="17899000" />
     </task>
     <task id="LOCAL-00001" summary="基础固定大小缓存&amp;淘汰策略类none、fifo">
       <created>1701700603438</created>
@@ -239,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1702391375673</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary=" 时钟clock驱逐算法 &amp;&amp; 定期随机淘汰策略">
+      <created>1702800825914</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1702800825914</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -276,7 +276,8 @@
     <MESSAGE value="代理实现 &amp; 慢日志监控使用" />
     <MESSAGE value="aof加载 &amp; 朴素lru &amp; 双向链表 + map lru &amp; 双向链表数据结构 &amp; 接口优化" />
     <MESSAGE value="LRU2 &amp; LRU2Q &amp; LFU" />
-    <option name="LAST_COMMIT_MESSAGE" value="LRU2 &amp; LRU2Q &amp; LFU" />
+    <MESSAGE value=" 时钟clock驱逐算法 &amp;&amp; 定期随机淘汰策略" />
+    <option name="LAST_COMMIT_MESSAGE" value=" 时钟clock驱逐算法 &amp;&amp; 定期随机淘汰策略" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
